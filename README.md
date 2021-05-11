@@ -1,4 +1,4 @@
-# Software Quality (COS482) 2020.2 Course Project
+# COS482 - Software Quality 2020.2 Course Project
 
 ## Time
 - [Joao Henrique Franco](https://github.com/joaohenrifranco)
@@ -7,8 +7,8 @@
 
 ## Documentação
 
-- Board do projeto
-- Documento de Visão
+- [Boards do projeto](https://github.com/joaohenrifranco/cos482/projects)
+- [Documento de Visão](https://github.com/joaohenrifranco/cos482/blob/main/docs/doc_de_visao.pdf)
 
 ## Credenciais para uso do Software 
 
