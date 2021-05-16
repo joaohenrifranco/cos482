@@ -13,5 +13,6 @@
 ## Credenciais para uso do Software 
 
 - No diretório qualidade-software execute a aplicação `Application.java` para inicializar o camunda.
+  - `mvn exec:java -Dexec.mainClass=com.qualidade.software.Application`
 
 - Vá até o navegador e acesse o endereço `localhost:8080` e autentique-se com as credenciais `COS482`/`COS482`
