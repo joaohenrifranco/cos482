@@ -1,17 +1,49 @@
 # Software Quality (COS482) 2020.2 Course Project
 
 ## Time
-- [Joao Henrique Franco](https://github.com/joaohenrifranco)
-- [Joao Pedro Brandao](https://github.com/jpbrs/)
+
+- [João Henrique Franco](https://github.com/joaohenrifranco)
+- [João Pedro Brandao](https://github.com/jpbrs/)
 - [Pedro Maciel Xavier](https://github.com/pedromxavier)
 
 ## Documentação
 
 - Board do projeto
 - Documento de Visão
+## Executando o processo BPMN
 
-## Credenciais para uso do Software 
+### Via Docker
 
-- No diretório qualidade-software execute a aplicação `Application.java` para inicializar o camunda.
+- Baixe o container com o engine do camunda
 
-- Vá até o navegador e acesse o endereço `localhost:8080` e autentique-se com as credenciais `COS482`/`COS482`
+`docker pull camunda/camunda-bpm-platform:run-latest`
+
+- Execute o container
+
+`docker run -d --name camunda -p 8080:8080 camunda/camunda-bpm-platform:run-latest`
+
+- [Baixe o camunda modeler](https://camunda.com/download/modeler/)
+
+- Execute uma instancia do processo usando o endpoint `http://localhost:8080/engine-rest`
+
+- Navegue até `http://localhost:8080/`
+
+- Credenciais: `demo`/`demo`
+
+## Via Spring Boot app
+
+- Copie o `bpmn/cinema.bpmn` para a `ingressa-camunda-web/src/main/resources`:
+
+`cp bpmn/cinema.bpmn ingressa-camunda-web/src/main.resources/`
+
+- No diretório `ingressa-camunda-web` instale as dependências:
+
+`mvn install`
+
+- Execute a aplicação: 
+
+`mvn spring-boot:run`
+  
+- Navegue até `http://localhost:8080/`
+
+- Credenciais: `COS482`/`COS482`
