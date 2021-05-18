@@ -12,6 +12,8 @@
 - [Documento de Visão](https://github.com/joaohenrifranco/cos482/blob/main/docs/doc_de_visao.pdf)
 ## Executando o processo BPMN
 
+![Diagrama BPMN](https://github.com/joaohenrifranco/cos482/blob/main/docs/cinema.png)
+
 ### Via Docker
 
 - Baixe o container com o engine do camunda
@@ -30,7 +32,7 @@
 
 - Credenciais: `demo`/`demo`
 
-## Via Spring Boot app
+### Via Spring Boot app
 
 - Copie o `bpmn/cinema.bpmn` para a `ingressa-camunda-web/src/main/resources`:
 
