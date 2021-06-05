@@ -1,6 +1,6 @@
 {
   "fields": [
-    { "fieldName": "movie", "fieldType": "String" },
+    { "fieldName": "movieName", "fieldType": "String" },
     { "fieldName": "sessionDate", "fieldType": "LocalDate" }
   ],
   "relationships": [],

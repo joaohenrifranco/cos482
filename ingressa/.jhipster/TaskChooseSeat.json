@@ -1,6 +1,6 @@
 {
   "fields": [
-    { "fieldName": "seat", "fieldType": "Number" }
+    { "fieldName": "seatNumber", "fieldType": "Number" }
   ],
   "relationships": [],
   "entityType": "user-task-form",
