@@ -1,0 +1,20 @@
+{
+  "fields": [
+    { "fieldName": "name", "fieldType": "String" },
+    { "fieldName": "startDate", "fieldType": "LocalDate" },
+    { "fieldName": "endDate", "fieldType": "LocalDate" }
+  ],
+  "relationships": [],
+  "entityType": "start-form",
+  "processBpmnId": "MovieTicketProcess",
+  "processEntityName": "MovieTicketProcess",
+  "domainEntityName": "MovieTicket",
+  "service": "serviceClass",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": false,
+  "pagination": "no",
+  "name": "MovieTicketStartForm",
+  "changelogDate": "20210401000002",
+  "skipFakeData": true
+}

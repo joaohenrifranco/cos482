@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0gi2e8r" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.8.1" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.14.0">
   <bpmn:collaboration id="Collaboration_1trttkf">
-    <bpmn:participant id="Participant_0n3gyh2" name="compra de ingresso" processRef="cinema" />
+    <bpmn:participant id="Participant_0n3gyh2" name="compra de ingresso" processRef="MovieTicketProcess" />
   </bpmn:collaboration>
-  <bpmn:process id="cinema" name="cinema" isExecutable="true">
+  <bpmn:process id="MovieTicketProcess" name="MovieTicketProcess" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1">
       <bpmn:outgoing>Flow_1xtgmn4</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:userTask id="Activity_19e3dhy" name="Escolher filme e sessão">
+    <bpmn:userTask id="ChooseMovieAndSession" name="Escolher filme e sessão">
       <bpmn:incoming>Flow_1xtgmn4</bpmn:incoming>
       <bpmn:outgoing>Flow_0tt5nno</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:userTask id="Activity_0ngq16k" name="Escolher o assento" camunda:formKey="seat">
+    <bpmn:userTask id="ChooseSeat" name="Escolher o assento" camunda:formKey="seat">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:outputParameter name="seat" />
@@ -29,7 +29,7 @@
       <bpmn:outgoing>Flow_1beuxk7</bpmn:outgoing>
       <bpmn:outgoing>Flow_0r10dh3</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:userTask id="Activity_13sdpj9" name="Enviar dados de pagamento" camunda:formKey="payment">
+    <bpmn:userTask id="SendPaymentData" name="Enviar dados de pagamento" camunda:formKey="payment">
       <bpmn:extensionElements>
         <camunda:formData>
           <camunda:formField id="cvc" type="string" defaultValue="737" />
@@ -39,7 +39,7 @@
       <bpmn:incoming>Flow_12hme2y</bpmn:incoming>
       <bpmn:outgoing>Flow_0wpdfky</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:serviceTask id="Activity_18gf8jm" name="Validar pagamento" camunda:expression="cvc = 737" camunda:resultVariable="validated">
+    <bpmn:serviceTask id="ConfirmPayment" name="Validar pagamento" camunda:expression="cvc = 737" camunda:resultVariable="validated">
       <bpmn:incoming>Flow_0wpdfky</bpmn:incoming>
       <bpmn:outgoing>Flow_0g1g675</bpmn:outgoing>
     </bpmn:serviceTask>
@@ -51,21 +51,21 @@
     <bpmn:endEvent id="Event_0ce74bf" name="bom filme!">
       <bpmn:incoming>Flow_1kadpbk</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:sequenceFlow id="Flow_0r10dh3" name="não" sourceRef="Gateway_1q816xa" targetRef="Activity_0ngq16k">
+    <bpmn:sequenceFlow id="Flow_0r10dh3" name="não" sourceRef="Gateway_1q816xa" targetRef="ChooseSeat">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">seat_number = '23'</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
-    <bpmn:sequenceFlow id="Flow_1beuxk7" name="sim" sourceRef="Gateway_1q816xa" targetRef="Activity_13sdpj9">
+    <bpmn:sequenceFlow id="Flow_1beuxk7" name="sim" sourceRef="Gateway_1q816xa" targetRef="SendPaymentData">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">seat_number != '23'</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
-    <bpmn:sequenceFlow id="Flow_0s9xdgz" sourceRef="Activity_0ngq16k" targetRef="Gateway_1q816xa" />
-    <bpmn:sequenceFlow id="Flow_0tt5nno" sourceRef="Activity_19e3dhy" targetRef="Activity_0ngq16k" />
-    <bpmn:sequenceFlow id="Flow_1xtgmn4" sourceRef="StartEvent_1" targetRef="Activity_19e3dhy" />
-    <bpmn:sequenceFlow id="Flow_0wpdfky" sourceRef="Activity_13sdpj9" targetRef="Activity_18gf8jm" />
-    <bpmn:sequenceFlow id="Flow_0g1g675" sourceRef="Activity_18gf8jm" targetRef="Gateway_19yhcuo" />
+    <bpmn:sequenceFlow id="Flow_0s9xdgz" sourceRef="ChooseSeat" targetRef="Gateway_1q816xa" />
+    <bpmn:sequenceFlow id="Flow_0tt5nno" sourceRef="ChooseMovieAndSession" targetRef="ChooseSeat" />
+    <bpmn:sequenceFlow id="Flow_1xtgmn4" sourceRef="StartEvent_1" targetRef="ChooseMovieAndSession" />
+    <bpmn:sequenceFlow id="Flow_0wpdfky" sourceRef="SendPaymentData" targetRef="ConfirmPayment" />
+    <bpmn:sequenceFlow id="Flow_0g1g675" sourceRef="ConfirmPayment" targetRef="Gateway_19yhcuo" />
     <bpmn:sequenceFlow id="Flow_1kadpbk" name="sim" sourceRef="Gateway_19yhcuo" targetRef="Event_0ce74bf">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">validated = true</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
-    <bpmn:sequenceFlow id="Flow_12hme2y" name="não" sourceRef="Gateway_19yhcuo" targetRef="Activity_13sdpj9">
+    <bpmn:sequenceFlow id="Flow_12hme2y" name="não" sourceRef="Gateway_19yhcuo" targetRef="SendPaymentData">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">validated = false</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
   </bpmn:process>
@@ -129,10 +129,10 @@
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
         <dc:Bounds x="212" y="207" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_0mciktf_di" bpmnElement="Activity_19e3dhy">
+      <bpmndi:BPMNShape id="Activity_0mciktf_di" bpmnElement="ChooseMovieAndSession">
         <dc:Bounds x="360" y="185" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1vek5xs_di" bpmnElement="Activity_0ngq16k">
+      <bpmndi:BPMNShape id="Activity_1vek5xs_di" bpmnElement="ChooseSeat">
         <dc:Bounds x="560" y="185" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_1q816xa_di" bpmnElement="Gateway_1q816xa" isMarkerVisible="true">
@@ -141,10 +141,10 @@
           <dc:Bounds x="753" y="163" width="74" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_141m1tw_di" bpmnElement="Activity_13sdpj9">
+      <bpmndi:BPMNShape id="Activity_141m1tw_di" bpmnElement="SendPaymentData">
         <dc:Bounds x="900" y="185" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_0kdsbol_di" bpmnElement="Activity_18gf8jm">
+      <bpmndi:BPMNShape id="Activity_0kdsbol_di" bpmnElement="ConfirmPayment">
         <dc:Bounds x="1100" y="185" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_19yhcuo_di" bpmnElement="Gateway_19yhcuo" isMarkerVisible="true">

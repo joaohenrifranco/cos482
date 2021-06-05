@@ -1,0 +1,19 @@
+{
+  "fields": [
+    { "fieldName": "movieName", "fieldType": "String" },
+    { "fieldName": "sessionDate", "fieldType": "LocalDate" },
+    { "fieldName": "seatNumber", "fieldType": "Number" },
+    { "fieldName": "cardNumber", "fieldType": "Number" },
+    { "fieldName": "paymentConfirmed", "fieldType": "Boolean" }
+  ],
+  "relationships": [],
+  "entityType": "domain",
+  "service": "serviceClass",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": true,
+  "pagination": "no",
+  "name": "MovieTicket",
+  "changelogDate": "20210401000001",
+  "skipFakeData": true
+}
