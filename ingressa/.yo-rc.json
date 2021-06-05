@@ -1,0 +1,57 @@
+{
+  "generator-jhipster": {
+    "skipJhipsterDependencies": true,
+    "blueprints": [
+      {
+        "name": "generator-jhipster-pais",
+        "version": "0.0.0"
+      }
+    ],
+    "otherModules": [
+      {
+        "name": "generator-jhipster-pais",
+        "version": "0.0.0"
+      }
+    ],
+    "applicationType": "monolith",
+    "baseName": "ingressa",
+    "jhipsterVersion": "7.0.1",
+    "skipClient": false,
+    "skipServer": false,
+    "skipUserManagement": false,
+    "skipCheckLengthOfIdentifier": false,
+    "skipFakeData": false,
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "testFrameworks": [],
+    "pages": [],
+    "creationTimestamp": 1622903040435,
+    "serviceDiscoveryType": false,
+    "reactive": false,
+    "authenticationType": "jwt",
+    "packageName": "com.ingressa",
+    "serverPort": "8080",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "postgresql",
+    "buildTool": "maven",
+    "serverSideOptions": [],
+    "websocket": false,
+    "searchEngine": false,
+    "messageBroker": false,
+    "enableSwaggerCodegen": false,
+    "withAdminUi": true,
+    "clientTheme": "none",
+    "clientFramework": "vue",
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "packageFolder": "com/ingressa",
+    "jwtSecretKey": "NTAyZjFiYTljZjc4MTgxMTQ5OTAzZGQzODgxNGM2YWYwZWE2MzI1M2IzMGM5MGQyYTM2Mjc4MDMwMWJlZGRiYWY3NjRlNzUzMzU3ZTYyZTcyNDBjNTc2YWVjNWZlYjdjOGI4MTUwOTJlZmJlOTM4OGJmZjk1NTVkMzUzOGIwNTY=",
+    "clientPackageManager": "npm",
+    "clientThemeVariant": "",
+    "languages": ["en"]
+  }
+}
