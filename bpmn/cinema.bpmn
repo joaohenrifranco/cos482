@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0gi2e8r" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.8.1" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.14.0">
   <bpmn:collaboration id="Collaboration_1trttkf">
-    <bpmn:participant id="Participant_0n3gyh2" name="compra de ingresso" processRef="Process_0w5dqbk" />
+    <bpmn:participant id="Participant_0n3gyh2" name="compra de ingresso" processRef="cinema" />
   </bpmn:collaboration>
-  <bpmn:process id="Process_0w5dqbk" isExecutable="true">
+  <bpmn:process id="cinema" name="cinema" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1">
       <bpmn:outgoing>Flow_1xtgmn4</bpmn:outgoing>
     </bpmn:startEvent>
