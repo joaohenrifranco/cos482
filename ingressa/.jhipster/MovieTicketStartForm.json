@@ -1,8 +1,6 @@
 {
   "fields": [
-    { "fieldName": "name", "fieldType": "String" },
-    { "fieldName": "startDate", "fieldType": "LocalDate" },
-    { "fieldName": "endDate", "fieldType": "LocalDate" }
+    { "fieldName": "name", "fieldType": "String" }
   ],
   "relationships": [],
   "entityType": "start-form",

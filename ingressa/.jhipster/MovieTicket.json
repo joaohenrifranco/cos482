@@ -1,10 +1,10 @@
 {
   "fields": [
+    { "fieldName": "name", "fieldType": "String" },
     { "fieldName": "movieName", "fieldType": "String" },
     { "fieldName": "sessionDate", "fieldType": "LocalDate" },
     { "fieldName": "seatNumber", "fieldType": "Number" },
-    { "fieldName": "creditCardNumber", "fieldType": "Number" },
-    { "fieldName": "paymentConfirmed", "fieldType": "Boolean" }
+    { "fieldName": "creditCardNumber", "fieldType": "Number" }
   ],
   "relationships": [],
   "entityType": "domain",
