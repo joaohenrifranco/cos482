@@ -14,10 +14,10 @@ public class ConfirmPaymentDelegate implements JavaDelegate {
     @Override
     public void execute(DelegateExecution delegateExecution) throws Exception {
         MovieTicketProcessDTO pi = (MovieTicketProcessDTO) delegateExecution.getVariable("pi");
-        String name = pi.getMovieTicket().getCreditCardNumber();
+        String cardNumber = pi.getMovieTicket().getCreditCardNumber();
         System.out.println("=================================================");
         System.out.println("=============== CARD VALIDATED ======================");
-        System.out.println("=============== " + name + "======================");
+        System.out.println("=============== " + cardNumber + "======================");
         System.out.println("=================================================");
     }
 }
