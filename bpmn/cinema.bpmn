@@ -12,7 +12,7 @@
       <bpmn:outgoing>Flow_1kadpbk</bpmn:outgoing>
       <bpmn:outgoing>Flow_12hme2y</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:serviceTask id="ConfirmPayment" name="Validar pagamento" camunda:expression="True">
+    <bpmn:serviceTask id="ConfirmPayment" name="Validar pagamento" camunda:delegateExpression="{confirmPaymentDelegate}">
       <bpmn:incoming>Flow_0wpdfky</bpmn:incoming>
       <bpmn:outgoing>Flow_0g1g675</bpmn:outgoing>
     </bpmn:serviceTask>
@@ -44,10 +44,10 @@
       <bpmn:outgoing>Flow_1xtgmn4</bpmn:outgoing>
     </bpmn:startEvent>
     <bpmn:sequenceFlow id="Flow_0r10dh3" name="não" sourceRef="Gateway_1q816xa" targetRef="ChooseSeat">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${!pi.getTravelPlan().getSeatNumber().contains("1")}</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${!pi.getMovieTicket().getSeatNumber().contains("1")}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_1beuxk7" name="sim" sourceRef="Gateway_1q816xa" targetRef="SendPaymentData">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${pi.getTravelPlan().getSeatNumber().contains("1")}</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${pi.getMovieTicket().getSeatNumber().contains("1")}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_0s9xdgz" sourceRef="ChooseSeat" targetRef="Gateway_1q816xa" />
     <bpmn:sequenceFlow id="Flow_0tt5nno" sourceRef="ChooseMovieAndSession" targetRef="ChooseSeat" />
@@ -55,10 +55,10 @@
     <bpmn:sequenceFlow id="Flow_0wpdfky" sourceRef="SendPaymentData" targetRef="ConfirmPayment" />
     <bpmn:sequenceFlow id="Flow_0g1g675" sourceRef="ConfirmPayment" targetRef="Gateway_19yhcuo" />
     <bpmn:sequenceFlow id="Flow_1kadpbk" name="sim" sourceRef="Gateway_19yhcuo" targetRef="Event_0ce74bf">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${pi.getTravelPlan().getCreditCardNumber().contains("1")}</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${pi.getMovieTicket().getCreditCardNumber().contains("1")}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_12hme2y" name="não" sourceRef="Gateway_19yhcuo" targetRef="SendPaymentData">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${!pi.getTravelPlan().getCreditCardNumber().contains("1")}</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${!pi.getMovieTicket().getCreditCardNumber().contains("1")}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
