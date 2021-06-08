@@ -1,4 +1,4 @@
-package java.com.cos482.delegates;
+package com.cos482.ingressa.delegates;
 
 import com.cos482.ingressa.domain.MovieTicket;
 import com.cos482.ingressa.service.dto.MovieTicketProcessDTO;
@@ -14,7 +14,7 @@ public class ConfirmPaymentDelegate implements JavaDelegate {
     @Override
     public void execute(DelegateExecution delegateExecution) throws Exception {
         MovieTicketProcessDTO pi = (MovieTicketProcessDTO) delegateExecution.getVariable("pi");
-        String name = pi.getMovieTicket().getName();
+        String name = pi.getMovieTicket().getCreditCardNumber();
         System.out.println("=================================================");
         System.out.println("=============== CARD VALIDATED ======================");
         System.out.println("=============== " + name + "======================");
