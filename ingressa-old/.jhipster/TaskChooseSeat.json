@@ -1,0 +1,19 @@
+{
+  "fields": [
+    { "fieldName": "seatNumber", "fieldType": "Number" }
+  ],
+  "relationships": [],
+  "entityType": "user-task-form",
+  "processBpmnId": "MovieTicketProcess",
+  "processEntityName": "MovieTicketProcess",
+  "taskBpmnId": "ChooseSeat",
+  "domainEntityName": "MovieTicket",
+  "service": "serviceClass",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": false,
+  "pagination": "no",
+  "skipFakeData": true,
+  "name": "TaskChooseSeat",
+  "changelogDate": "20210401000004"
+}

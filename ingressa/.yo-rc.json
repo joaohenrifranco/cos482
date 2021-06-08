@@ -26,11 +26,11 @@
     "dtoSuffix": "DTO",
     "testFrameworks": [],
     "pages": [],
-    "creationTimestamp": 1622903040435,
+    "creationTimestamp": 1623116881046,
     "serviceDiscoveryType": false,
     "reactive": false,
     "authenticationType": "jwt",
-    "packageName": "com.ingressa",
+    "packageName": "com.cos482.ingressa",
     "serverPort": "8080",
     "cacheProvider": "ehcache",
     "enableHibernateCache": true,
@@ -48,10 +48,10 @@
     "clientFramework": "vue",
     "enableTranslation": true,
     "nativeLanguage": "en",
-    "packageFolder": "com/ingressa",
-    "jwtSecretKey": "NTAyZjFiYTljZjc4MTgxMTQ5OTAzZGQzODgxNGM2YWYwZWE2MzI1M2IzMGM5MGQyYTM2Mjc4MDMwMWJlZGRiYWY3NjRlNzUzMzU3ZTYyZTcyNDBjNTc2YWVjNWZlYjdjOGI4MTUwOTJlZmJlOTM4OGJmZjk1NTVkMzUzOGIwNTY=",
+    "packageFolder": "com/cos482/ingressa",
+    "jwtSecretKey": "NjY3NWQ3NGVkNTUzOTUzZjYxZjk1NmQ3ZmJlM2YxMzQ4YWFlMjllNjhlZDA5MjVhNTkxYTQyYjQyZGVlMzBmZDZjNTExNGNmYjdiYTZmZDdhZjA0MTg4ZGE3ZmE3OTE5M2UzMjk5NDlkNDY4YTQ2MDQwNjA5MTY1YWNmZTU4YzI=",
     "clientPackageManager": "npm",
     "clientThemeVariant": "",
-    "languages": ["en"]
+    "languages": ["en", "pt-br"]
   }
 }

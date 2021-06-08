@@ -17,7 +17,7 @@ logging:
   level:
     ROOT: INFO
     tech.jhipster: INFO
-    com.ingressa: INFO
+    com.cos482.ingressa: INFO
 
 management:
   metrics:
@@ -101,7 +101,7 @@ jhipster:
         # - In the JHipster Registry (which includes a Spring Cloud Config server)
         # - In a separate `application-prod.yml` file, in the same folder as your executable JAR file
         # - In the `JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET` environment variable
-        base64-secret: NTAyZjFiYTljZjc4MTgxMTQ5OTAzZGQzODgxNGM2YWYwZWE2MzI1M2IzMGM5MGQyYTM2Mjc4MDMwMWJlZGRiYWY3NjRlNzUzMzU3ZTYyZTcyNDBjNTc2YWVjNWZlYjdjOGI4MTUwOTJlZmJlOTM4OGJmZjk1NTVkMzUzOGIwNTY=
+        base64-secret: NjY3NWQ3NGVkNTUzOTUzZjYxZjk1NmQ3ZmJlM2YxMzQ4YWFlMjllNjhlZDA5MjVhNTkxYTQyYjQyZGVlMzBmZDZjNTExNGNmYjdiYTZmZDdhZjA0MTg4ZGE3ZmE3OTE5M2UzMjk5NDlkNDY4YTQ2MDQwNjA5MTY1YWNmZTU4YzI=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 2592000
