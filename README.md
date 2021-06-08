@@ -10,6 +10,7 @@
 
 - [Boards do projeto](https://github.com/joaohenrifranco/cos482/projects)
 - [Documento de Visão](https://github.com/joaohenrifranco/cos482/blob/main/docs/doc_de_visao.pdf)
+- [BPCheck](./bpcheck.md)
 ## Executando o processo BPMN
 
 ![Diagrama BPMN](https://github.com/joaohenrifranco/cos482/blob/main/docs/cinema.png)
