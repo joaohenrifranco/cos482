@@ -1,0 +1,24 @@
+{
+  "ingressaApp": {
+    "taskChooseSeat": {
+      "home": {
+        "title": "Task Choose Seats",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Task Choose Seat",
+        "createOrEditLabel": "Criar ou editar Task Choose Seat",
+        "notFound": "Nenhum Task Choose Seat encontrado"
+      },
+      "created": "Um novo Task Choose Seat foi criado com o identificador {{ param }}",
+      "updated": "Um Task Choose Seat foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Task Choose Seat foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Task Choose Seat {{ id }}?"
+      },
+      "detail": {
+        "title": "Task Choose Seat"
+      },
+      "id": "ID",
+      "seatNumber": "Seat Number"
+    }
+  }
+}

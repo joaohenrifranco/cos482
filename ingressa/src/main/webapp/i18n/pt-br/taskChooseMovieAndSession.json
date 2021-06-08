@@ -1,0 +1,25 @@
+{
+  "ingressaApp": {
+    "taskChooseMovieAndSession": {
+      "home": {
+        "title": "Task Choose Movie And Sessions",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Task Choose Movie And Session",
+        "createOrEditLabel": "Criar ou editar Task Choose Movie And Session",
+        "notFound": "Nenhum Task Choose Movie And Session encontrado"
+      },
+      "created": "Um novo Task Choose Movie And Session foi criado com o identificador {{ param }}",
+      "updated": "Um Task Choose Movie And Session foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Task Choose Movie And Session foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Task Choose Movie And Session {{ id }}?"
+      },
+      "detail": {
+        "title": "Task Choose Movie And Session"
+      },
+      "id": "ID",
+      "movieName": "Movie Name",
+      "sessionDate": "Session Date"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "ingressaApp": {
+    "movieTicket": {
+      "home": {
+        "title": "Movie Tickets",
+        "refreshListLabel": "Refresh list",
+        "notFound": "No Movie Tickets found"
+      },
+      "detail": {
+        "title": "Movie Ticket"
+      },
+      "id": "ID",
+      "name": "Name",
+      "movieName": "Movie Name",
+      "sessionDate": "Session Date",
+      "seatNumber": "Seat Number",
+      "creditCardNumber": "Credit Card Number"
+    }
+  }
+}

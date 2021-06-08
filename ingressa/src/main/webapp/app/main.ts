@@ -42,6 +42,8 @@ import UserOAuth2Service from '@/entities/user/user.oauth2.service';
 import ProcessDefinitionService from '@/entities/process-definition/process-definition.service';
 import ProcessInstanceService from '@/entities/process-instance/process-instance.service';
 import TaskInstanceService from '@/entities/task-instance/task-instance.service';
+import MovieTicketService from '@/entities/movie-ticket/movie-ticket.service';
+import MovieTicketProcessService from '@/entities/movie-ticket-process/movie-ticket-process.service';
 // jhipster-needle-add-entity-service-to-main-import - JHipster will import entities services here
 
 /* tslint:enable */
@@ -116,6 +118,8 @@ new Vue({
     processDefinitionService: () => new ProcessDefinitionService(),
     processInstanceService: () => new ProcessInstanceService(),
     taskInstanceService: () => new TaskInstanceService(),
+    movieTicketService: () => new MovieTicketService(),
+    movieTicketProcessService: () => new MovieTicketProcessService(),
     // jhipster-needle-add-entity-service-to-main - JHipster will import entities services here
     accountService: () => accountService,
   },

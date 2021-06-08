@@ -1,0 +1,28 @@
+{
+  "ingressaApp": {
+    "movieTicketProcess": {
+      "home": {
+        "title": "Movie Ticket Processes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Movie Ticket Process",
+        "createOrEditLabel": "Create or edit a Movie Ticket Process",
+        "notFound": "No Movie Ticket Processes found"
+      },
+      "created": "A new Movie Ticket Process is created with identifier {{ param }}",
+      "updated": "A Movie Ticket Process is updated with identifier {{ param }}",
+      "deleted": "A Movie Ticket Process is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Movie Ticket Process {{ id }}?"
+      },
+      "detail": {
+        "title": "Movie Ticket Process"
+      },
+      "id": "ID",
+      "name": "Name",
+      "movieName": "Movie Name",
+      "sessionDate": "Session Date",
+      "seatNumber": "Seat Number",
+      "creditCardNumber": "Credit Card Number"
+    }
+  }
+}

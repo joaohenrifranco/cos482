@@ -52,6 +52,7 @@
     "jwtSecretKey": "NjY3NWQ3NGVkNTUzOTUzZjYxZjk1NmQ3ZmJlM2YxMzQ4YWFlMjllNjhlZDA5MjVhNTkxYTQyYjQyZGVlMzBmZDZjNTExNGNmYjdiYTZmZDdhZjA0MTg4ZGE3ZmE3OTE5M2UzMjk5NDlkNDY4YTQ2MDQwNjA5MTY1YWNmZTU4YzI=",
     "clientPackageManager": "npm",
     "clientThemeVariant": "",
-    "languages": ["en", "pt-br"]
+    "languages": ["en", "pt-br"],
+    "entities": ["MovieTicket"]
   }
 }

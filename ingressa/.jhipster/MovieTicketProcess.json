@@ -1,10 +1,25 @@
 {
   "fields": [
-    { "fieldName": "name", "fieldType": "String" },
-    { "fieldName": "movieName", "fieldType": "String" },
-    { "fieldName": "sessionDate", "fieldType": "LocalDate" },
-    { "fieldName": "seatNumber", "fieldType": "Number" },
-    { "fieldName": "creditCardNumber", "fieldType": "Number" }
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "movieName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sessionDate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "seatNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "creditCardNumber",
+      "fieldType": "String"
+    }
   ],
   "relationships": [],
   "entityType": "process-binding",
@@ -13,7 +28,7 @@
   "service": "serviceClass",
   "dto": "mapstruct",
   "jpaMetamodelFiltering": false,
-  "readOnly": true,
+  "readOnly": false,
   "pagination": "no",
   "name": "MovieTicketProcess",
   "changelogDate": "20210401000001",

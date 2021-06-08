@@ -1,0 +1,28 @@
+{
+  "ingressaApp": {
+    "movieTicketProcess": {
+      "home": {
+        "title": "Movie Ticket Processes",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Movie Ticket Process",
+        "createOrEditLabel": "Criar ou editar Movie Ticket Process",
+        "notFound": "Nenhum Movie Ticket Process encontrado"
+      },
+      "created": "Um novo Movie Ticket Process foi criado com o identificador {{ param }}",
+      "updated": "Um Movie Ticket Process foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Movie Ticket Process foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Movie Ticket Process {{ id }}?"
+      },
+      "detail": {
+        "title": "Movie Ticket Process"
+      },
+      "id": "ID",
+      "name": "Name",
+      "movieName": "Movie Name",
+      "sessionDate": "Session Date",
+      "seatNumber": "Seat Number",
+      "creditCardNumber": "Credit Card Number"
+    }
+  }
+}

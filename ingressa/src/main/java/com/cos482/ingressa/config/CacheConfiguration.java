@@ -51,6 +51,8 @@ public class CacheConfiguration {
             createCache(cm, com.cos482.ingressa.domain.ProcessDefinition.class.getName());
             createCache(cm, com.cos482.ingressa.domain.ProcessInstance.class.getName());
             createCache(cm, com.cos482.ingressa.domain.TaskInstance.class.getName());
+            createCache(cm, com.cos482.ingressa.domain.MovieTicket.class.getName());
+            createCache(cm, com.cos482.ingressa.domain.MovieTicketProcess.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

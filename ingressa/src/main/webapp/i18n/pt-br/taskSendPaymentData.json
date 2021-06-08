@@ -1,0 +1,24 @@
+{
+  "ingressaApp": {
+    "taskSendPaymentData": {
+      "home": {
+        "title": "Task Send Payment Data",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Task Send Payment Data",
+        "createOrEditLabel": "Criar ou editar Task Send Payment Data",
+        "notFound": "Nenhum Task Send Payment Data encontrado"
+      },
+      "created": "Um novo Task Send Payment Data foi criado com o identificador {{ param }}",
+      "updated": "Um Task Send Payment Data foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Task Send Payment Data foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Task Send Payment Data {{ id }}?"
+      },
+      "detail": {
+        "title": "Task Send Payment Data"
+      },
+      "id": "ID",
+      "creditCardNumber": "Credit Card Number"
+    }
+  }
+}

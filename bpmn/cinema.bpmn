@@ -4,58 +4,50 @@
     <bpmn:participant id="Participant_0n3gyh2" name="compra de ingresso" processRef="MovieTicketProcess" />
   </bpmn:collaboration>
   <bpmn:process id="MovieTicketProcess" name="MovieTicketProcess" isExecutable="true">
-    <bpmn:startEvent id="StartEvent_1">
-      <bpmn:outgoing>Flow_1xtgmn4</bpmn:outgoing>
-    </bpmn:startEvent>
-    <bpmn:userTask id="ChooseMovieAndSession" name="Escolher filme e sessão">
-      <bpmn:incoming>Flow_1xtgmn4</bpmn:incoming>
-      <bpmn:outgoing>Flow_0tt5nno</bpmn:outgoing>
-    </bpmn:userTask>
-    <bpmn:userTask id="ChooseSeat" name="Escolher o assento" camunda:formKey="seat">
-      <bpmn:extensionElements>
-        <camunda:inputOutput>
-          <camunda:outputParameter name="seat" />
-        </camunda:inputOutput>
-        <camunda:formData>
-          <camunda:formField id="seat_number" label="Seat number" type="string" />
-        </camunda:formData>
-      </bpmn:extensionElements>
-      <bpmn:incoming>Flow_0tt5nno</bpmn:incoming>
-      <bpmn:incoming>Flow_0r10dh3</bpmn:incoming>
-      <bpmn:outgoing>Flow_0s9xdgz</bpmn:outgoing>
-    </bpmn:userTask>
-    <bpmn:exclusiveGateway id="Gateway_1q816xa" name="O assento está disponível?">
-      <bpmn:incoming>Flow_0s9xdgz</bpmn:incoming>
-      <bpmn:outgoing>Flow_1beuxk7</bpmn:outgoing>
-      <bpmn:outgoing>Flow_0r10dh3</bpmn:outgoing>
-    </bpmn:exclusiveGateway>
-    <bpmn:userTask id="SendPaymentData" name="Enviar dados de pagamento" camunda:formKey="payment">
-      <bpmn:extensionElements>
-        <camunda:formData>
-          <camunda:formField id="cvc" type="string" defaultValue="737" />
-        </camunda:formData>
-      </bpmn:extensionElements>
-      <bpmn:incoming>Flow_1beuxk7</bpmn:incoming>
-      <bpmn:incoming>Flow_12hme2y</bpmn:incoming>
-      <bpmn:outgoing>Flow_0wpdfky</bpmn:outgoing>
-    </bpmn:userTask>
-    <bpmn:serviceTask id="ConfirmPayment" name="Validar pagamento" camunda:expression="cvc = 737" camunda:resultVariable="validated">
-      <bpmn:incoming>Flow_0wpdfky</bpmn:incoming>
-      <bpmn:outgoing>Flow_0g1g675</bpmn:outgoing>
-    </bpmn:serviceTask>
+    <bpmn:endEvent id="Event_0ce74bf" name="bom filme!">
+      <bpmn:incoming>Flow_1kadpbk</bpmn:incoming>
+    </bpmn:endEvent>
     <bpmn:exclusiveGateway id="Gateway_19yhcuo" name="O pagamento foi bem sucedido?">
       <bpmn:incoming>Flow_0g1g675</bpmn:incoming>
       <bpmn:outgoing>Flow_1kadpbk</bpmn:outgoing>
       <bpmn:outgoing>Flow_12hme2y</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:endEvent id="Event_0ce74bf" name="bom filme!">
-      <bpmn:incoming>Flow_1kadpbk</bpmn:incoming>
-    </bpmn:endEvent>
+    <bpmn:serviceTask id="ConfirmPayment" name="Validar pagamento" camunda:expression="True">
+      <bpmn:incoming>Flow_0wpdfky</bpmn:incoming>
+      <bpmn:outgoing>Flow_0g1g675</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:userTask id="SendPaymentData" name="Enviar dados de pagamento">
+      <bpmn:incoming>Flow_1beuxk7</bpmn:incoming>
+      <bpmn:incoming>Flow_12hme2y</bpmn:incoming>
+      <bpmn:outgoing>Flow_0wpdfky</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="Gateway_1q816xa" name="O assento está disponível?">
+      <bpmn:incoming>Flow_0s9xdgz</bpmn:incoming>
+      <bpmn:outgoing>Flow_0r10dh3</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1beuxk7</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="ChooseSeat" name="Escolher o assento">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:outputParameter name="seat" />
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0r10dh3</bpmn:incoming>
+      <bpmn:incoming>Flow_0tt5nno</bpmn:incoming>
+      <bpmn:outgoing>Flow_0s9xdgz</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="ChooseMovieAndSession" name="Escolher filme e sessão">
+      <bpmn:incoming>Flow_1xtgmn4</bpmn:incoming>
+      <bpmn:outgoing>Flow_0tt5nno</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_1xtgmn4</bpmn:outgoing>
+    </bpmn:startEvent>
     <bpmn:sequenceFlow id="Flow_0r10dh3" name="não" sourceRef="Gateway_1q816xa" targetRef="ChooseSeat">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">seat_number = '23'</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${!pi.getTravelPlan().getSeatNumber().contains("1")}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_1beuxk7" name="sim" sourceRef="Gateway_1q816xa" targetRef="SendPaymentData">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">seat_number != '23'</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${pi.getTravelPlan().getSeatNumber().contains("1")}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_0s9xdgz" sourceRef="ChooseSeat" targetRef="Gateway_1q816xa" />
     <bpmn:sequenceFlow id="Flow_0tt5nno" sourceRef="ChooseMovieAndSession" targetRef="ChooseSeat" />
@@ -63,10 +55,10 @@
     <bpmn:sequenceFlow id="Flow_0wpdfky" sourceRef="SendPaymentData" targetRef="ConfirmPayment" />
     <bpmn:sequenceFlow id="Flow_0g1g675" sourceRef="ConfirmPayment" targetRef="Gateway_19yhcuo" />
     <bpmn:sequenceFlow id="Flow_1kadpbk" name="sim" sourceRef="Gateway_19yhcuo" targetRef="Event_0ce74bf">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">validated = true</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${pi.getTravelPlan().getCreditCardNumber().contains("1")}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_12hme2y" name="não" sourceRef="Gateway_19yhcuo" targetRef="SendPaymentData">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">validated = false</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${!pi.getTravelPlan().getCreditCardNumber().contains("1")}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
