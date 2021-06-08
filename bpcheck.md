@@ -31,28 +31,28 @@
 | 28  | Are all events in the model associated with a suitable event type? | ✔️ |
 | 29  | Is it possible to identify the source of each signal event and link received by all activities in the model? | ✔️ |
 | 30  | Is there any signal event that should be better characterized as a message event? | ❌ |
-| 31 |  Is there any error event that should be better characterized as a cancellation event? | ✔️❌ |
-| 32 |  Do all error events adequately represent errors in the business process execution? | ✔️❌ |
-| 33  | Are all technology for sending-receiving messages correctly described in the model events? | ✔️❌ |
-| 34  | Is there any timer event not effectively based on a temporal condition? Is there any timer event based on cyclic temporal condition although the business process had specified a specific date/time to it happens (or vice-versa)? | ✔️❌ |
-| 35  | Is there any multiple events in the model not connected to two or more distinct process events? | ✔️❌ |
-| 36  | Should be any conditional event in the model implemented as a decision gateway or vice versa? | ✔️❌ |
-| 37 |  Are all compensation events associated with the right compensation activities? | ✔️❌ |
-| 38  | Is there any pool/lane neglected in the model, omitting (for instance) a department, role or area described in the business process? | ✔️❌ |
-| 39  |Are there similar/identical activities in the model performed by different pools/ lanes?| ✔️❌ |
-| 40 | Do all model transactions support all BPMN conditions to be characterized as that?| ✔️❌ |
-| 41 | Does each loop sub-process present only the tasks that should be repeated under the conditions given?| ✔️❌ |
-| 42 | Are all loop sub-processes conditions correctly provided (clearly described and free of unnecessary information)? Are all these conditions feasible from the business process?| ✔️❌ |
-| 43 | Is there any serial loop sub-process that should be implemented as parallel or vice versa?| ✔️❌ |
-| 44 | Is there any incomplete ad hoc activity or even incorrectly classified as ad-hoc?| ✔️❌ |
-| 45 | Does each group highlighted in the model is composed of elements from the same category, helping to understand the business process better?| ✔️❌ |
-| 46  |Taking into account all combinations of events and gates presented in the model, can we ensure that all possible scenarios of the process execution are correct?| ✔️❌ |
-| 47  |Is there any inconsistency among the model elements? For instance, does any subsequence of activities contradict another subsequence or even does any gateway from the model gateway contradict another one?| ✔️❌ |
-| 48  |Is there a clear correlation between the process model element in a lower level of abstraction and another model describing the same process in a higher level of abstraction?| ✔️❌ |
-| 49  |Are all data objects in the model part of the business process? Are they clearly described without unnecessary/redundant information?| ✔️❌ |
-| 50  |Is there any missing data object in the model?| ✔️❌ |
-| 51  |Are all data objects represented in the model generated, consulted or modified by the activities associated with them? Do the directions of the arrows in such associations correctly represent such behaviors?| ✔️❌ |
-| 52  |Is it possible to clearly understand each data object property/state? Is there no unnecessary or redundant information in such descriptions?| ✔️❌ |
-| 53  |Is there any relevant data object property/state omitted from the model?| ✔️❌ |
-| 54  |Is there two similar sub-flows (or more) in the model in which the data object properties/states diverge?| ✔️❌ |
-| 55  |Do the possible model execution scenarios suggest any divergence with a data object state/property?| ✔️❌ |
+| 31 |  Is there any error event that should be better characterized as a cancellation event? | ❌ |
+| 32 |  Do all error events adequately represent errors in the business process execution? | **N/A** |
+| 33  | Are all technology for sending-receiving messages correctly described in the model events? | ✔️ |
+| 34  | Is there any timer event not effectively based on a temporal condition? Is there any timer event based on cyclic temporal condition although the business process had specified a specific date/time to it happens (or vice-versa)? | ❌ |
+| 35  | Is there any multiple events in the model not connected to two or more distinct process events? | ❌ |
+| 36  | Should be any conditional event in the model implemented as a decision gateway or vice versa? | ❌ |
+| 37 |  Are all compensation events associated with the right compensation activities? | **N/A** |
+| 38  | Is there any pool/lane neglected in the model, omitting (for instance) a department, role or area described in the business process? | ❌ |
+| 39  | Are there similar/identical activities in the model performed by different pools/ lanes?| ❌ |
+| 40 | Do all model transactions support all BPMN conditions to be characterized as that?| ✔️ |
+| 41 | Does each loop sub-process present only the tasks that should be repeated under the conditions given?| ✔️ |
+| 42 | Are all loop sub-processes conditions correctly provided (clearly described and free of unnecessary information)? Are all these conditions feasible from the business process?| ✔️ |
+| 43 | Is there any serial loop sub-process that should be implemented as parallel or vice versa?| ❌ |
+| 44 | Is there any incomplete ad hoc activity or even incorrectly classified as ad-hoc?| ❌ |
+| 45 | Does each group highlighted in the model is composed of elements from the same category, helping to understand the business process better?| **N/A** |
+| 46  |Taking into account all combinations of events and gates presented in the model, can we ensure that all possible scenarios of the process execution are correct?| ✔️ |
+| 47  |Is there any inconsistency among the model elements? For instance, does any subsequence of activities contradict another subsequence or even does any gateway from the model gateway contradict another one?| ❌ |
+| 48  |Is there a clear correlation between the process model element in a lower level of abstraction and another model describing the same process in a higher level of abstraction?| ✔️ |
+| 49  |Are all data objects in the model part of the business process? Are they clearly described without unnecessary/redundant information?| ✔️ |
+| 50  |Is there any missing data object in the model?| ❌ |
+| 51  |Are all data objects represented in the model generated, consulted or modified by the activities associated with them? Do the directions of the arrows in such associations correctly represent such behaviors?| ✔️ |
+| 52  |Is it possible to clearly understand each data object property/state? Is there no unnecessary or redundant information in such descriptions?| ❌ |
+| 53  |Is there any relevant data object property/state omitted from the model?| ❌ |
+| 54  |Is there two similar sub-flows (or more) in the model in which the data object properties/states diverge?| ❌ |
+| 55  |Do the possible model execution scenarios suggest any divergence with a data object state/property?| ❌ |
